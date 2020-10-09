@@ -13,7 +13,9 @@ import { fetchSmurfs } from '../actions'
 //App
 class App extends Component {
 
-  
+  componentDidMount() {
+    this.props.fetchSmurfs('http://localhost:3333/smurfs')
+  }
 
   render() {
     return (
@@ -36,4 +38,4 @@ const mapStateToProps = (state) => {
 }
 
 //connect App to redux store
-export default connect(mapStateToProps, {})(App)
+export default connect(mapStateToProps, { fetchSmurfs })(App)
