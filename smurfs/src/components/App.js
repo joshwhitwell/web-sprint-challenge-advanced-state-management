@@ -7,6 +7,9 @@ import { connect } from 'react-redux'
 //styles
 import "./App.css"
 
+//components
+import { Form } from './Form'
+
 //actions
 import { fetchSmurfs } from '../actions'
 
@@ -21,6 +24,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>SMURFS</h1>
+        <Form />
         {this.props.state.smurfs.map(smurf =>
           <div key={smurf.id}>
             <h2>{smurf.name}</h2>
