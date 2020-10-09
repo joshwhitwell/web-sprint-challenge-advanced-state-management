@@ -1,5 +1,13 @@
-import React, { Component } from "react";
-import "./App.css";
+//react dependencies
+import React, { Component } from "react"
+
+//redux dependencies
+import { connect } from 'react-redux'
+
+//styles
+import "./App.css"
+
+//App
 class App extends Component {
   render() {
     return (
@@ -9,8 +17,9 @@ class App extends Component {
         <div>Start inside of your `src/index.js` file!</div>
         <div>Have fun!</div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+
+export default App
