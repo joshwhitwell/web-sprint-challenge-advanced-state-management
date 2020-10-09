@@ -19,3 +19,11 @@ export const fetchSmurfs = (url) => (dispatch) => {
             dispatch({ type: FETCH_FAILURE, payload: err})
         })
 }
+
+export const postSmurf = (smurf) => (dispatch) => {
+    console.log(smurf)
+    // axios.post('http://localhost:3333/smurfs', smurf)
+    //     .then(res => {
+            
+    //     })
+}

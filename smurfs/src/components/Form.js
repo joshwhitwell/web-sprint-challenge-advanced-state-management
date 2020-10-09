@@ -1,6 +1,12 @@
 //react dependencies
 import React, { useState } from 'react'
 
+//redux dependencies
+import { connect } from 'react-redux'
+
+//actions
+import { postSmurf } from '../actions/index'
+
 //initial form values
 const initialValues = {
     name: '',
@@ -10,7 +16,7 @@ const initialValues = {
 }
 
 //Form
-export const Form = () => {
+function Form(props) {
     const [values, setValues] = useState(initialValues)
 
     const handleChanges = (e) => {
@@ -19,7 +25,7 @@ export const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        //submit action creator
+        postSmurf({...values, id: Math.floor(Math.random() * 1000) +1})
         setValues(initialValues)
     }
 
@@ -50,3 +56,12 @@ export const Form = () => {
         </form>
     )
 }
+
+//map redux state to component props
+// const mapStateToProps = (state) => {
+//     return {
+//       state
+//     }
+//   }
+
+export default Form
