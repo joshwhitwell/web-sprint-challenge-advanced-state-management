@@ -25,7 +25,7 @@ function Form(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        postSmurf({...values, id: Math.floor(Math.random() * 1000) +1})
+        props.postSmurf({...values, id: Math.floor(Math.random() * 1000) +1})
         setValues(initialValues)
     }
 
@@ -58,10 +58,11 @@ function Form(props) {
 }
 
 //map redux state to component props
-// const mapStateToProps = (state) => {
-//     return {
-//       state
-//     }
-//   }
+const mapStateToProps = (state) => {
+    return {
+      state
+    }
+  }
 
-export default Form
+//connect Form to redux store
+export default connect(mapStateToProps, { postSmurf })(Form)

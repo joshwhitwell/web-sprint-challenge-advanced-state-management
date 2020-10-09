@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 import "./App.css"
 
 //components
-import { Form } from './Form'
+import Form from './Form'
 
 //actions
 import { fetchSmurfs } from '../actions'
